@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Should display card image and title 1`] = `
+<div class="mb-4 col-md-3 col-xl-2 col-4">
+  <div class="card">
+    <!----> <img src="https://via.placeholder.com/600/92c952" alt="accusamus beatae ad facilis cum similique qui sunt" class="card__image img-responsive img-fluid">
+    <div class="card__text">
+      <h2 class="card__title d-none d-md-block">accusamus beatae ad facilis cum similique qui sunt</h2> <button class="card__button"><span class="sr-only">Remove photo</span></button>
+    </div>
+  </div>
+  <h2 class="card__title--sm d-md-none">accusamus beatae ad facilis cum similique qui sunt</h2>
+</div>
+`;

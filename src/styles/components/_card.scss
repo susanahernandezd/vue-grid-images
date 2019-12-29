@@ -1,11 +1,14 @@
 .card {
   width: 100%;
   height: 100%;
-  float: left;
   overflow: hidden;
   position: relative;
   text-align: center;
-  cursor: default;
+  cursor: pointer;
+
+  @include media-breakpoint-down(md) {
+    height: auto;
+  }
 
   &__text {
     width: 100%;
@@ -16,23 +19,25 @@
     left: 0;
     background-color: rgba(75,75,75,0.7);
     transition: all 0.4s ease-in-out;
-  }
 
-  &__image {
-    display: block;
-    position: relative;
   }
-
+  
   &__title {
     color: #fff;
     text-align: center;
     position: relative;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 0.5rem;
     margin: 0;
+    font-weight: 300;
     background: rgba(0, 0, 0, 0.6);
     margin-top: 20%;
     transition: all 0.4s ease-in-out;
+
+    &--sm {
+      font-size: 0.9rem;
+      margin: 0.2rem 0 0 0;
+    }
   }
 
   &__button {
@@ -50,6 +55,28 @@
     justify-content: center;
     position: absolute;
     top: 0;
+  }
+
+  &__image {
+    display: block;
+    position: relative;
+  }
+
+  &__spinner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255, 0.5);
+
+    .spinner-border {
+      color: #6b6b6b;
+    }
   }
 
   &:hover {

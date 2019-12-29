@@ -1,8 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300&display=swap');
+
 body {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 5%;
+  color: #202121;
+  font-weight: 300;
+}
+
+.page-title {
+  font-weight: 100;
+  padding: 3rem 0 2.5rem 0;
+  color: rgba(0,0,0,.6);
+
+  @include media-breakpoint-down(md) {
+    font-size: 2rem;
+    padding: 2rem 0 1.5rem 0;
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0
 }

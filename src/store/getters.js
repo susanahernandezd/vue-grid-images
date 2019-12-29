@@ -1,8 +1,5 @@
 export default {
-  cards: ({ cards = undefined }) => {
-    if (!cards) {
-      return
-    }
-    return cards.map(({ id, title, url }) => ({ id, title, url }))
+  lastCardId: ({ cardList = [] }) => {
+    return cardList.length > 0 ? cardList[cardList.length - 1].id : 0
   }
 }
