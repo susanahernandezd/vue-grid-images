@@ -1,0 +1,97 @@
+.card {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+
+  &__text {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background-color: rgba(75,75,75,0.7);
+    transition: all 0.4s ease-in-out;
+  }
+
+  &__image {
+    display: block;
+    position: relative;
+  }
+
+  &__title {
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.6);
+    margin-top: 20%;
+    transition: all 0.4s ease-in-out;
+  }
+
+  &__button {
+    text-decoration: none;
+    background: transparent;
+    color: #fff;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: scale(0);
+    transition: all 0.4s ease-in-out;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+  }
+
+  &:hover {
+    .card__text {
+      background-color: rgba(48, 152, 157, 0.4);
+    }
+
+    .card__title {
+      margin-top: 10%;
+    }
+
+    .card__button {
+      opacity: 1;
+      filter: alpha(opacity=100);
+      transform: scale(1);
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__title {
+      font-size: 1rem;
+    }
+
+    &__button {
+      span {
+        bottom: 10%;
+        position: absolute;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    &__title {
+      font-size: 0.8rem;
+    }
+
+    &__button {
+      span {
+        bottom: 10%;
+        position: absolute;
+      }
+    }
+  }
+
+}
