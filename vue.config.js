@@ -1,4 +1,5 @@
 const path = require('path')
+const { GenerateSW } = require('workbox-webpack-plugin')
 
 module.exports = {
   chainWebpack: config => {
@@ -6,11 +7,11 @@ module.exports = {
     config.plugins.delete('prefetch')
     config.resolve.symlinks(false)
   },
-
   configureWebpack: {
     output: {
       libraryExport: 'default'
-    }
+    },
+    plugins: [ new GenerateSW() ]
   },
   pluginOptions: {
     'style-resources-loader': {

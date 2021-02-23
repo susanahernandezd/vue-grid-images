@@ -24,7 +24,7 @@ describe('Getters should', () => {
   })
 
   it('retrieve 0 if cardList is empty', () => {
-    const state = { 
+    const state = {
       cardList: []
     }
 

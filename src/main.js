@@ -3,6 +3,7 @@ import App from './App.vue'
 import store from './store'
 import InfiniteScroll from 'vue-infinite-scroll'
 import { LayoutPlugin, ImagePlugin, SpinnerPlugin } from 'bootstrap-vue'
+import './registerServiceWorker'
 
 Vue.config.productionTip = false
 Vue.use(LayoutPlugin)

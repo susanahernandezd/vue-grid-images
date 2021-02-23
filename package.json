@@ -5,9 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "start": "npm run serve",
-    "test:unit": "vue-cli-service test:unit",
     "test:watch": "vue-cli-service test:unit --watch"
   },
   "dependencies": {
@@ -16,6 +16,7 @@
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.9.0",
+    "register-service-worker": "^1.7.1",
     "vue": "^2.6.12",
     "vue-infinite-scroll": "^2.0.2",
     "vuex": "^3.6.2"
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.11",
     "@vue/cli-plugin-eslint": "^4.5.11",
+    "@vue/cli-plugin-pwa": "^4.5.11",
     "@vue/cli-plugin-unit-jest": "^4.5.11",
     "@vue/cli-service": "^4.5.11",
     "@vue/eslint-config-standard": "^4.0.0",

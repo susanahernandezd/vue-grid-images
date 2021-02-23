@@ -27,7 +27,7 @@ describe('Mutations should', () => {
     }
   })
 
-  it('Add new cards to cardList', () => {    
+  it('Add new cards to cardList', () => {
     const newCards = [photosResponse[2]]
     const result = [...cardList, ...newCards]
 
