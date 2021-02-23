@@ -1,5 +1,4 @@
 const path = require('path')
-const { GenerateSW } = require('workbox-webpack-plugin')
 
 module.exports = {
   chainWebpack: config => {
@@ -11,8 +10,7 @@ module.exports = {
   configureWebpack: {
     output: {
       libraryExport: 'default'
-    },
-    plugins: [ new GenerateSW() ]
+    }
   },
   pluginOptions: {
     'style-resources-loader': {
@@ -21,7 +19,11 @@ module.exports = {
     }
   },
   pwa: {
-    workboxPluginMode: 'GenerateSW',
+    name: 'su-pwa',
+    workboxPluginMode: 'InjectManifest',
+    workboxOptions: {
+      swSrc: './src/service-worker.js'
+    },
     themeColor: '#42b983',
     msTileColor: '#42b983',
     appleMobileWebAppCache: 'yes',
