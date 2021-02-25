@@ -11,7 +11,7 @@ workbox.routing.registerRoute(
         maxEntries: 30
       }),
       new workbox.cacheableResponse.Plugin({
-        statuses: [0, 200]
+        statuses: [200]
       })
     ]
   })
@@ -25,24 +25,25 @@ workbox.routing.registerRoute(
     plugins: [
       new workbox.expiration.Plugin({
         maxEntries: 48,
-        maxAgeSeconds: 5 * 60, // 5 minutes
+        maxAgeSeconds: 30 * 60, // 30 minutes
       }),
       new workbox.cacheableResponse.Plugin({
-        statuses: [0, 200]
+        statuses: [200]
       })
     ]
   }),
   'GET'
 )
 
+// Queue up failed requests and retry them when future sync events are fired
+const bgSyncPlugin = new workbox.backgroundSync.Plugin('DeleteCardQueue', {
+  maxRetentionTime: 24 * 60 // Retry for max of 24 Hours
+})
+
 workbox.routing.registerRoute(
-  new RegExp('https://jsonplaceholder.typecode.com/photos/(.*)'),
+  new RegExp('https://jsonplaceholder.typicode.com/photos/(.*)'),
   workbox.strategies.networkOnly({
-    plugins: [
-      new workbox.backgroundSync.Plugin('deleteCardQueue', {
-        maxRetentionTime: 24 * 60 // Retry for max of 24 Hours
-      })
-    ]
+    plugins: [ bgSyncPlugin ]
   }),
   'DELETE'
 )
